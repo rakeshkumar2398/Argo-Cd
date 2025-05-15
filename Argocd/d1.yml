@@ -1,0 +1,20 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: facebook-server
+  labels:
+    app: fbapp
+spec:
+  selector:
+    matchLabels: 
+      app: fbapp
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: fbapp
+    spec:
+      containers:
+        - name: fbcont
+          image: nginx
